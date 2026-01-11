@@ -1,0 +1,336 @@
+/**
+ * MIT MSA Website - Component Styles
+ *
+ * Reusable UI components following BEM naming convention.
+ * BEM = Block__Element--Modifier
+ */
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Primary button */
+.btn--primary {
+  background-color: var(--color-primary-600);
+  color: var(--color-neutral-0);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-700);
+}
+
+.btn--primary:active {
+  background-color: var(--color-primary-800);
+}
+
+/* Secondary button */
+.btn--secondary {
+  background-color: var(--color-secondary-500);
+  color: var(--color-neutral-900);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-secondary-600);
+}
+
+.btn--secondary:active {
+  background-color: var(--color-secondary-700);
+}
+
+/* Outline button */
+.btn--outline {
+  background-color: transparent;
+  border-color: var(--color-primary-600);
+  color: var(--color-primary-600);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-primary-600);
+  color: var(--color-neutral-0);
+}
+
+/* Ghost button (minimal) */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-primary-600);
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-primary-50);
+}
+
+/* Button sizes */
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.card {
+  background-color: var(--color-neutral-0);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card__content {
+  padding: var(--space-6);
+}
+
+.card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
+  color: var(--color-neutral-900);
+}
+
+.card__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-3);
+}
+
+.card__text {
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-700);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Card variants */
+.card--bordered {
+  box-shadow: none;
+  border: 1px solid var(--color-neutral-200);
+}
+
+.card--bordered:hover {
+  box-shadow: none;
+  border-color: var(--color-primary-300);
+}
+
+/* ==========================================================================
+   Info Box / Callout
+   ========================================================================== */
+
+.info-box {
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary-500);
+  background-color: var(--color-primary-50);
+}
+
+.info-box__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
+  color: var(--color-primary-700);
+}
+
+.info-box__text {
+  color: var(--color-neutral-700);
+}
+
+.info-box--warning {
+  border-left-color: var(--color-warning);
+  background-color: #fff8e1;
+}
+
+.info-box--warning .info-box__title {
+  color: var(--color-secondary-700);
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+.link {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-primary-700);
+}
+
+.link--subtle {
+  text-decoration: none;
+}
+
+.link--subtle:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.section-header__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--space-4);
+}
+
+.section-header__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-neutral-600);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   Icon with text
+   ========================================================================== */
+
+.icon-text {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.icon-text__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary-600);
+}
+
+.icon-text__content {
+  flex: 1;
+}
+
+/* ==========================================================================
+   Badge / Tag
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+}
+
+.badge--secondary {
+  background-color: var(--color-secondary-100);
+  color: var(--color-secondary-700);
+}
+
+.badge--neutral {
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-700);
+}
+
+/* ==========================================================================
+   Divider
+   ========================================================================== */
+
+.divider {
+  height: 1px;
+  background-color: var(--color-neutral-200);
+  border: none;
+  margin: var(--space-8) 0;
+}
+
+.divider--thick {
+  height: 2px;
+}
+
+/* ==========================================================================
+   Form Elements
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: var(--space-6);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-700);
+  margin-bottom: var(--space-2);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  background-color: var(--color-neutral-0);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.form-input::placeholder {
+  color: var(--color-neutral-400);
+}
+
+.form-input--error {
+  border-color: var(--color-error);
+}
+
+.form-input--error:focus {
+  box-shadow: 0 0 0 3px #ffebee;
+}
+
+.form-error {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  margin-top: var(--space-1);
+}

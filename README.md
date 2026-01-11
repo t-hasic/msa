@@ -1,5 +1,91 @@
-# MIT MSA Website
+# MIT Muslim Students Association Website
 
-This repository contains the source code for the MIT MSA (Muslim Student Association) website.
+The official website for the MIT Muslim Students Association (MSA).
 
-The website is hosted on msa.mit.edu, which is hosted on MIT's Athena system. As a result, the source files that are hosted on Athena need to be static files (i.e., HTML, CSS, JS, images, etc.).
+## Tech Stack
+
+- **React** - UI library
+- **Vite** - Build tool and dev server
+- **React Router** - Client-side routing (HashRouter for static hosting)
+- **Vanilla CSS** - Custom design system with CSS variables
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20.19+ or 22.12+
+- npm
+
+### Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The site will be available at `http://localhost:5173`
+
+### Production Build
+
+```bash
+# Build for production
+npm run build
+```
+
+This generates static files in the `dist/` folder that can be deployed to any static hosting service, including MIT Athena.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── layout/          # Header, Footer, Layout wrapper
+│   └── ui/              # Reusable UI components (Button, Card, etc.)
+├── pages/               # Page components (Home, About, Prayer, etc.)
+├── styles/              # CSS architecture
+│   ├── index.css        # Main entry point
+│   ├── variables.css    # Design tokens (colors, spacing, etc.)
+│   ├── reset.css        # CSS reset
+│   ├── layout.css       # Page structure styles
+│   ├── components.css   # Reusable component styles
+│   ├── utilities.css    # Utility classes
+│   └── main.css         # Page-specific styles
+└── assets/              # Images and icons
+```
+
+## Deployment to MIT Athena
+
+1. Build the production version:
+   ```bash
+   npm run build
+   ```
+
+2. Upload the contents of the `dist/` folder to your Athena web directory:
+   ```bash
+   scp -r dist/* username@athena.dialup.mit.edu:~/web_scripts/msa/
+   ```
+
+3. Set appropriate permissions:
+   ```bash
+   ssh username@athena.dialup.mit.edu
+   chmod -R 755 ~/web_scripts/msa/
+   ```
+
+The site uses `HashRouter` which works without server-side routing configuration.
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for coding standards and guidelines.
+
+## License
+
+MIT Muslim Students Association

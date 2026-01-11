@@ -1,0 +1,24 @@
+/**
+ * MIT MSA Website - Main Stylesheet Entry Point
+ *
+ * This file imports all CSS modules in the correct order.
+ * Import order matters for proper cascade:
+ * 1. Variables (design tokens)
+ * 2. Reset (normalize browser defaults)
+ * 3. Layout (structural styles)
+ * 4. Components (reusable UI patterns)
+ * 5. Utilities (single-purpose helpers)
+ * 6. Page-specific styles
+ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+/* Core styles */
+@import './variables.css';
+@import './reset.css';
+@import './layout.css';
+@import './components.css';
+@import './utilities.css';
+@import './main.css';

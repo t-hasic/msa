@@ -1,0 +1,238 @@
+/**
+ * MIT MSA Website - Page-Specific Styles
+ *
+ * Styles specific to certain pages that don't fit into reusable components.
+ * This file is imported by index.css after all other modules.
+ */
+
+/* Prayer times table */
+.prayer-times {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-neutral-200);
+}
+
+.prayer-times th,
+.prayer-times td {
+  padding: var(--space-4) var(--space-6);
+  text-align: left;
+}
+
+.prayer-times thead {
+  background-color: var(--color-primary-600);
+  color: var(--color-neutral-0);
+}
+
+.prayer-times th {
+  font-weight: var(--font-weight-semibold);
+}
+
+.prayer-times tbody tr {
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.prayer-times tbody tr:last-child {
+  border-bottom: none;
+}
+
+.prayer-times tbody tr:nth-child(even) {
+  background-color: var(--color-neutral-50);
+}
+
+/* Location cards */
+.location-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background-color: var(--color-neutral-0);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.location-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.location-card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+}
+
+.location-card__badge {
+  flex-shrink: 0;
+}
+
+.location-card__address {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+}
+
+.location-card__description {
+  color: var(--color-neutral-700);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Team member cards */
+.team-card {
+  text-align: center;
+  padding: var(--space-6);
+}
+
+.team-card__image {
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  margin: 0 auto var(--space-4);
+  border: 4px solid var(--color-primary-100);
+}
+
+.team-card__name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--space-1);
+}
+
+.team-card__role {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Feature list with icons */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.feature-item {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.feature-item__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-600);
+}
+
+.feature-item__content {
+  flex: 1;
+}
+
+.feature-item__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--space-1);
+}
+
+.feature-item__text {
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Quick info strip */
+.quick-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  background-color: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+}
+
+.quick-info__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.quick-info__icon {
+  color: var(--color-primary-600);
+}
+
+.quick-info__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+}
+
+.quick-info__value {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+}
+
+/* Arabic text styling */
+.arabic {
+  font-family: var(--font-family-arabic);
+  font-size: 1.2em;
+  direction: rtl;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: var(--space-16) var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-600) 100%);
+  color: var(--color-neutral-0);
+  border-radius: var(--radius-xl);
+}
+
+.cta-section__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-4);
+}
+
+.cta-section__text {
+  font-size: var(--font-size-lg);
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto var(--space-8);
+}
+
+/* Mailing list form */
+.mailing-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.mailing-form__input {
+  padding: var(--space-4);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+}
+
+.mailing-form__input:focus {
+  outline: 2px solid var(--color-secondary-400);
+  outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+  .mailing-form {
+    flex-direction: row;
+    max-width: 500px;
+  }
+
+  .mailing-form__input {
+    flex: 1;
+  }
+}
